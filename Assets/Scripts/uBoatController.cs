@@ -10,10 +10,10 @@ public class uBoatController : MonoBehaviour
   private Animator _animator;
   private Vector4 _velocity;
 
-  private float _distSpeed = 14.0f; // mater/sec
-  private float _speed = 1.0f;
-  private float _course = 1f;
-  private int _distCourse = 1;
+  private float _distSpeed = 0f; // mater/sec
+  private float _speed = 0f;
+  private float _course = 0f;
+  private float _distCourse = 0f;
 
   void Start()
   {
@@ -58,8 +58,8 @@ public class uBoatController : MonoBehaviour
   }
   
   private void UpdateSpeed() {
-    // 2フレームで進む距離を計算
+    // 1フレームで進む距離を計算
     _speed += (_distSpeed - _speed) * Time.deltaTime;
-    Debug.Log(_speed);
+    // Debug.Log(_speed);
   }
 }

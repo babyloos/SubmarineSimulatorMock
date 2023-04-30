@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 00c1e31f080cc4025b27ca4b9283af3b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _uBoat: {fileID: 919132149155446097, guid: 665494da211714bd2a783fb46a1ffc21, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
