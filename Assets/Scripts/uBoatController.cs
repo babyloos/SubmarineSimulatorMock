@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Common;
 
-public class uBoatController : MonoBehaviour
+public class UBoatController : MonoBehaviour
 {
   private Rigidbody _rigidbody;
   private Transform _transform;
@@ -18,15 +18,14 @@ public class uBoatController : MonoBehaviour
   void Start()
   {
     this._rigidbody = GetComponent<Rigidbody>();
-    // _transform = GetComponent<Transform>();
+    this._transform = GetComponent<Transform>();
     // _animator = GetComponent<Animator>();
   }
 
   void Update()
   {
     this.UpdateSpeed();
-    this._velocity = new Vector4(this._rigidbody.velocity.x, this._rigidbody.velocity.y, 1).normalized;
-    this._rigidbody.velocity = this._velocity * this._speed;
+    this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
   }
 
   public void ChangeEngineOut(EngineOut engineOut) {
@@ -59,7 +58,6 @@ public class uBoatController : MonoBehaviour
   
   private void UpdateSpeed() {
     // 1フレームで進む距離を計算
-    _speed += (_distSpeed - _speed) * Time.deltaTime;
-    // Debug.Log(_speed);
+    this._speed += (_distSpeed - _speed) * Time.deltaTime;
   }
 }

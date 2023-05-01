@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Common;
 
-public class UIController : MonoBehaviour, IPointerClickHandler
+public class EngineTelegraphController : MonoBehaviour, IPointerClickHandler
 {
   public GameObject TargetObject;
   public EngineTelegraphAllowController AllowController;
 
   private Vector2 _center;
+  private UBoatController _uboatController;
 
   void Start()
   {
+    this._uboatController = TargetObject.GetComponent<UBoatController>();
     var rect = gameObject.GetComponent<RectTransform>();
     var width = rect.sizeDelta.x;
     var height = rect.sizeDelta.y;
@@ -30,6 +32,8 @@ public class UIController : MonoBehaviour, IPointerClickHandler
     if (angle <= -45 || angle >= 45) 
     {
       this.AllowController.SetRotate((float)angle * -1 + 180);
+      var engineOut = GetEngineOutFromDeg(angle);
+      this._uboatController.ChangeEngineOut(engineOut);
       Debug.Log("EngineOut: " + GetEngineOutFromDeg(angle));
     }
 	}
