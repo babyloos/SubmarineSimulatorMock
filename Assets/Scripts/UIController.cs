@@ -8,6 +8,7 @@ using Common;
 public class UIController : MonoBehaviour, IPointerClickHandler
 {
   public GameObject TargetObject;
+  public EngineTelegraphAllowController AllowController;
 
   private Vector2 _center;
 
@@ -28,6 +29,7 @@ public class UIController : MonoBehaviour, IPointerClickHandler
     var angle = Utility.GetClickDeg(this._center, pointerData.position);
     if (angle <= -45 || angle >= 45) 
     {
+      this.AllowController.SetRotate((float)angle * -1 + 180);
       Debug.Log("EngineOut: " + GetEngineOutFromDeg(angle));
     }
 	}
