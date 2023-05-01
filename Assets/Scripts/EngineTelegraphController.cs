@@ -15,7 +15,9 @@ public class EngineTelegraphController : MonoBehaviour, IPointerClickHandler
 
   void Start()
   {
-    this._uboatController = TargetObject.GetComponent<UBoatController>();
+    this._uboatController = this.TargetObject.GetComponent<UBoatController>();
+    Debug.Log(TargetObject);
+    Debug.Log(this._uboatController);
     var rect = gameObject.GetComponent<RectTransform>();
     var width = rect.sizeDelta.x;
     var height = rect.sizeDelta.y;
@@ -34,7 +36,7 @@ public class EngineTelegraphController : MonoBehaviour, IPointerClickHandler
       this.AllowController.SetRotate((float)angle * -1 + 180);
       var engineOut = GetEngineOutFromDeg(angle);
       this._uboatController.ChangeEngineOut(engineOut);
-      Debug.Log("EngineOut: " + GetEngineOutFromDeg(angle));
+      // Debug.Log("EngineOut: " + GetEngineOutFromDeg(angle));
     }
 	}
 
