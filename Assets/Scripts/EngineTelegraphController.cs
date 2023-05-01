@@ -12,16 +12,12 @@ public class EngineTelegraphController : MonoBehaviour, IPointerClickHandler
 
   private Vector2 _center;
   private UBoatController _uboatController;
+  private RectTransform _rectTransform;
 
   void Start()
   {
     this._uboatController = this.TargetObject.GetComponent<UBoatController>();
-    Debug.Log(TargetObject);
-    Debug.Log(this._uboatController);
-    var rect = gameObject.GetComponent<RectTransform>();
-    var width = rect.sizeDelta.x;
-    var height = rect.sizeDelta.y;
-    this._center = new Vector2(width / 2, height / 2);
+    this._rectTransform = gameObject.GetComponent<RectTransform>();
   }
 
   void Update()
@@ -30,13 +26,13 @@ public class EngineTelegraphController : MonoBehaviour, IPointerClickHandler
 
   public void OnPointerClick(PointerEventData pointerData)
   {
-    var angle = Utility.GetClickDeg(this._center, pointerData.position);
+    var clickedPoint = new Vector2(pointerData.position.x - this._rectTransform.position.x, pointerData.position.y - this._rectTransform.position.y);
+    var angle = Utility.GetClickDeg(new Vector2(0.0f, 0.0f), clickedPoint);
     if (angle <= -45 || angle >= 45) 
     {
       this.AllowController.SetRotate((float)angle * -1 + 180);
       var engineOut = GetEngineOutFromDeg(angle);
       this._uboatController.ChangeEngineOut(engineOut);
-      // Debug.Log("EngineOut: " + GetEngineOutFromDeg(angle));
     }
 	}
 
