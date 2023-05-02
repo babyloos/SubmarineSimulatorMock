@@ -6,6 +6,8 @@ using Common;
 
 public class UBoatController : MonoBehaviour
 {
+  public CompassBackController CompassBackController;
+
   private Rigidbody _rigidbody;
   private Transform _transform;
   private Animator _animator;
@@ -79,13 +81,12 @@ public class UBoatController : MonoBehaviour
     } else {
       this._rotateAngle = 0f;
     }
-    // Debug.Log("rotateDiff: " + rotateDiff);
 
     var rotateSpeed = this._speed / 10;
     var rotation = Quaternion.Euler(0f, this._course + this._rotateAngle, 0f);
     this._transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-    // Debug.Log(this._transform.rotation);
-    // Debug.Log("course: " + this._course);
+
+    this.CompassBackController.SetRotate(this._course);
   }
   
   private void UpdateSpeed() {

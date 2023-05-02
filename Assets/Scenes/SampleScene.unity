@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 126801943}
   - component: {fileID: 126801942}
   - component: {fileID: 126801944}
+  - component: {fileID: 126801945}
   m_Layer: 5
   m_Name: CompassBack
   m_TagString: Untagged
@@ -278,6 +279,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UboatObject: {fileID: 1905823875}
+--- !u!114 &126801945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126801940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f27fdc05b834e34b8b83e06b769106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271700706
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +370,7 @@ GameObject:
   - component: {fileID: 550752790}
   - component: {fileID: 550752792}
   - component: {fileID: 550752791}
+  - component: {fileID: 550752793}
   m_Layer: 5
   m_Name: CompassCenter
   m_TagString: Untagged
@@ -422,6 +436,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550752789}
   m_CullTransparentMesh: 1
+--- !u!114 &550752793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550752789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4b3d809239942078a1f6070be7d91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632697349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa57cbaa621d44a15a29da82306a5443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CompassBackController: {fileID: 126801945}
 --- !u!54 &1905823878
 Rigidbody:
   m_ObjectHideFlags: 0
