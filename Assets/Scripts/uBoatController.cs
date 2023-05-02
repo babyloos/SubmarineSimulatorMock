@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,15 +11,17 @@ public class UBoatController : MonoBehaviour
   private Animator _animator;
   private Vector4 _velocity;
 
-  private float _distSpeed = 0f; // mater/sec
+  private float _distSpeed = 0f;  // mater/sec
   private float _speed = 0f;
   private float _course = 0f;
   private float _distCourse = 0f;
+  private float _rotateAngle = 0f;
 
   void Start()
   {
     this._rigidbody = GetComponent<Rigidbody>();
     this._transform = GetComponent<Transform>();
+    // Debug.Log(this._transform.forward);
     // _animator = GetComponent<Animator>();
   }
 
@@ -26,6 +29,7 @@ public class UBoatController : MonoBehaviour
   {
     this.UpdateSpeed();
     this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
+    this.UpdateDirection();
   }
 
   public void ChangeEngineOut(EngineOut engineOut) {
@@ -54,6 +58,33 @@ public class UBoatController : MonoBehaviour
       default:
         break;
     }
+  }
+
+  public void ChangeDirection()
+  {
+  }
+
+  private void UpdateDirection()
+  {
+    this._course = this._transform.eulerAngles.y;
+    var rotateDiff = this._distCourse - this._course;
+    rotateDiff -= (float)(Math.Floor(rotateDiff / 360.0) * 360.0); // 角度差を 0～360に丸める
+    if (rotateDiff > 180.0) rotateDiff -= 360.0f;          // 角度差を-180~180に丸める
+    rotateDiff = (float)(Math.Floor(rotateDiff));
+    if (rotateDiff < 0) {
+      this._rotateAngle = -90f;
+    } else if (rotateDiff > 0) {
+      this._rotateAngle = 90f;
+    } else {
+      this._rotateAngle = 0f;
+    }
+    // Debug.Log("rotateDiff: " + rotateDiff);
+
+    var rotateSpeed = this._speed / 10;
+    var rotation = Quaternion.Euler(0f, this._course + this._rotateAngle, 0f);
+    this._transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
+    // Debug.Log(this._transform.rotation);
+    // Debug.Log("course: " + this._course);
   }
   
   private void UpdateSpeed() {
