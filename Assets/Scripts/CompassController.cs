@@ -25,7 +25,7 @@ public class CompassController : MonoBehaviour, IPointerClickHandler
   {
     var clickedPoint = new Vector2(pointerData.position.x - this._rectTransform.position.x, pointerData.position.y - this._rectTransform.position.y);
     var angle = Utility.GetClickDeg(new Vector2(0.0f, 0.0f), clickedPoint);
-    if (angle < 0) angle += 360;
+    // if (angle < 0) angle += 360;
     this._uboatController.ChangeCourse((float)angle);
   }
 }

@@ -62,9 +62,11 @@ public class UBoatController : MonoBehaviour
     }
   }
 
-  public void ChangeCourse(float newCourse)
+  public void ChangeCourse(float diff)
   {
-    this._distCourse = newCourse;
+    this._distCourse = this._course + diff;
+    if (this._distCourse < 0) this._distCourse += 360f;
+    this._distCourse %= 360;
   }
 
   private void UpdateDirection()
