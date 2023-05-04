@@ -7,6 +7,7 @@ using Common;
 public class DepthMeterController : MonoBehaviour, IPointerClickHandler
 {
   public GameObject UboatObject;
+  public DepthMeterAllowController DepthMeterAllow;
 
   private RectTransform _rectTransform;
   private UBoatController _uboatController;
@@ -28,10 +29,13 @@ public class DepthMeterController : MonoBehaviour, IPointerClickHandler
     var angle = Utility.GetClickDeg(new Vector2(0.0f, 0.0f), clickedPoint);
     if (angle >= -180 && angle <= -152) {
       resultDepth = 0f;
+      this.DepthMeterAllow.SetRotate(152);
     } else if (angle <= 180 && angle >= 152) {
       resultDepth = 260f;
+      this.DepthMeterAllow.SetRotate(-152);
     } else {
       resultDepth = (float)((angle + 152) / 1.16923 * -1);
+      this.DepthMeterAllow.SetRotate((float)angle * -1);
     }
 
     this._uboatController.ChangeDepth(resultDepth);
