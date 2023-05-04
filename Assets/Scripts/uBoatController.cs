@@ -18,13 +18,13 @@ public class UBoatController : MonoBehaviour
   private float _course = 0f;
   private float _distCourse = 0f;
   private float _rotateAngle = 0f;
+  private float _depth = 0f;
+  private float _distDepth = 0.0f;
 
   void Start()
   {
     this._rigidbody = GetComponent<Rigidbody>();
     this._transform = GetComponent<Transform>();
-    // Debug.Log(this._transform.forward);
-    // _animator = GetComponent<Animator>();
   }
 
   void Update()
@@ -32,6 +32,7 @@ public class UBoatController : MonoBehaviour
     this.UpdateSpeed();
     this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
     this.UpdateDirection();
+    this.UpdateDepth();
   }
 
   public void ChangeEngineOut(EngineOut engineOut) {
@@ -67,6 +68,28 @@ public class UBoatController : MonoBehaviour
     this._distCourse = this._course + diff;
     if (this._distCourse < 0) this._distCourse += 360f;
     this._distCourse %= 360;
+  }
+
+  public void ChangeDepth(float depth)
+  {
+    this._distDepth = depth;
+  }
+
+  private void UpdateDepth()
+  {
+    this._depth = this._transform.position.y;
+    var depthSpeed = 10f + this._speed / 2;
+    if (this._depth != this._distDepth) {
+      var direction = new Vector3(0f, 0f, 0f);
+      if (this._depth > this._distDepth) {
+        direction = -this._transform.up;
+      } else if (this._depth < this._distDepth) {
+        direction = this._transform.up;
+      }
+
+      var force = Math.Abs(this._depth - this._distDepth) * 100;
+      this._rigidbody.AddForce(direction * (depthSpeed * force), ForceMode.Force);
+    }
   }
 
   private void UpdateDirection()
