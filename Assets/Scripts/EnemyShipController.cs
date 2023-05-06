@@ -9,7 +9,7 @@ public class EnemyShipController : ShipControllerBase
   {
     base.Start();
     this.ChangeEngineOut(EngineOut.AheadSlow);
-    this.ChangeCourse(180.0f);
+    this.ChangeCourse(90.0f);
   }
 
   void Update()
