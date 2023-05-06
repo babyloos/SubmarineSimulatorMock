@@ -6,8 +6,6 @@ using Common;
 
 public class ShipControllerBase : MonoBehaviour
 {
-  public CompassBackController CompassBackController;
-
   private Rigidbody _rigidbody;
   private Transform _transform;
   private Animator _animator;
@@ -15,19 +13,19 @@ public class ShipControllerBase : MonoBehaviour
 
   private float _distSpeed = 0f;  // mater/sec
   private float _speed = 0f;
-  private float _course = 0f;
+  protected float _course = 0f;
   private float _distCourse = 0f;
   private float _rotateAngle = 0f;
   private float _depth = 0f;
   private float _distDepth = 0.0f;
 
-  void Start()
+  protected void Start()
   {
     this._rigidbody = GetComponent<Rigidbody>();
     this._transform = GetComponent<Transform>();
   }
 
-  void Update()
+  protected void Update()
   {
     this.UpdateSpeed();
     this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
@@ -92,7 +90,7 @@ public class ShipControllerBase : MonoBehaviour
     }
   }
 
-  private void UpdateDirection()
+  protected virtual void UpdateDirection()
   {
     this._course = this._transform.eulerAngles.y;
     var rotateDiff = this._distCourse - this._course;
@@ -110,8 +108,6 @@ public class ShipControllerBase : MonoBehaviour
     var rotateSpeed = this._speed / 10;
     var rotation = Quaternion.Euler(0f, this._course + this._rotateAngle, 0f);
     this._transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
-
-    this.CompassBackController.SetRotate(this._course);
   }
   
   private void UpdateSpeed() {

@@ -6,4 +6,21 @@ using Common;
 
 public class UBoatController : ShipControllerBase
 {
+  public CompassBackController CompassBackController;
+
+  void Start()
+  {
+    base.Start();
+  }
+
+  void Update()
+  {
+    base.Update();
+  }
+
+  protected override void UpdateDirection()
+  {
+    base.UpdateDirection();
+    this.CompassBackController.SetRotate(this._course);
+  }
 }

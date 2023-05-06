@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
       propertyPath: m_Name
-      value: CargoShip Variant
+      value: CargoShipPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -68,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1751855093654925077}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3852818101175193862}
   m_SourcePrefab: {fileID: 100100000, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
 --- !u!1 &952429489134907455 stripped
 GameObject:
@@ -124,3 +127,16 @@ CapsuleCollider:
   m_Height: 212.8
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3852818101175193862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952429489134907455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec4a4cc068da459f96abaabf8904f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CompassBackController: {fileID: 0}
