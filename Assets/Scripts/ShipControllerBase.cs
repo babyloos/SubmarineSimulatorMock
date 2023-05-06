@@ -95,7 +95,7 @@ public class ShipControllerBase : MonoBehaviour
     this._course = this._transform.eulerAngles.y;
     var rotateDiff = this._distCourse - this._course;
     rotateDiff -= (float)(Math.Floor(rotateDiff / 360.0) * 360.0); // 角度差を 0～360に丸める
-    if (rotateDiff > 180.0) rotateDiff -= 360.0f;          // 角度差を-180~180に丸める
+    if (rotateDiff > 180.0) rotateDiff -= 360.0f;                  // 角度差を-180~180に丸める
     rotateDiff = (float)(Math.Floor(rotateDiff));
     if (rotateDiff < 0) {
       this._rotateAngle = -90f;
@@ -105,7 +105,7 @@ public class ShipControllerBase : MonoBehaviour
       this._rotateAngle = 0f;
     }
 
-    var rotateSpeed = this._speed / 10;
+    var rotateSpeed = 3f;
     var rotation = Quaternion.Euler(0f, this._course + this._rotateAngle, 0f);
     this._transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
   }
