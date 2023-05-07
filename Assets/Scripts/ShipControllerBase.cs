@@ -7,7 +7,7 @@ using Common;
 public class ShipControllerBase : MonoBehaviour
 {
   private Rigidbody _rigidbody;
-  private Transform _transform;
+  protected Transform _transform;
   private Animator _animator;
   private Vector4 _velocity;
 
