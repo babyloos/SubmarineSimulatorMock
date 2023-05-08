@@ -26,7 +26,7 @@ public class UBoatController : ShipControllerBase
   }
 
   public void FireTorpedo() {
-    var position = (this._transform.position + new Vector3(0, -3f, 0)) + this._transform.forward * -38f;
+    var position = (this._transform.position + new Vector3(0, 0, 0)) + this._transform.forward * -38f;
     Instantiate(this.TorpedoPrefab, position, Quaternion.Euler(this._transform.eulerAngles));
   }
 }
