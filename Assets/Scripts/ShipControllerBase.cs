@@ -18,6 +18,8 @@ public class ShipControllerBase : MonoBehaviour
   private float _rotateAngle = 0f;
   private float _depth = 0f;
   private float _distDepth = 0.0f;
+  private float _hitpoint = 1000.0f;
+  private bool _isAlive = true;
 
   protected void Start()
   {
@@ -27,10 +29,14 @@ public class ShipControllerBase : MonoBehaviour
 
   protected void Update()
   {
-    this.UpdateSpeed();
-    this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
-    this.UpdateDirection();
-    this.UpdateDepth();
+    if (this._isAlive) {
+      this.UpdateSpeed();
+      this._rigidbody.AddForce(this._transform.forward * (this._speed * 10000) * -1, ForceMode.Force);
+      this.UpdateDirection();
+      this.UpdateDepth();
+    } else {
+      this._rigidbody.AddForce(-this._transform.up * 10000, ForceMode.Force);
+    }
   }
 
   public void ChangeEngineOut(EngineOut engineOut) {
@@ -71,6 +77,13 @@ public class ShipControllerBase : MonoBehaviour
   public void ChangeDepth(float depth)
   {
     this._distDepth = depth;
+  }
+
+  public void AddDamage(float damage) {
+    this._hitpoint -= damage;
+    if (this._hitpoint <= 0) {
+      this._isAlive = false;
+    }
   }
 
   private void UpdateDepth()

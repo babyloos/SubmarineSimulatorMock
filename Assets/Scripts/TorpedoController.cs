@@ -26,5 +26,10 @@ public class TorpedoController : MonoBehaviour
     ParticleSystem newParticle = Instantiate(this.Particle);
     newParticle.transform.position = this._transform.position;
     Destroy(this.gameObject);
+    var hitObject = collision.gameObject;
+    var shipController = hitObject.GetComponent<ShipControllerBase>();
+    if (!(shipController is null)) {
+      shipController.AddDamage(1000f);
+    }
   }
 }
