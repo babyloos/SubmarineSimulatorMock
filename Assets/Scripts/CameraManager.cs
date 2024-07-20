@@ -27,7 +27,7 @@ public class CameraManager : MonoBehaviour
       if (!reverse)
       {
         var x = (lastMousePosition.x - Input.mousePosition.x);
-        var y = (Input.mousePosition.y - lastMousePosition.y);
+        var y = (lastMousePosition.y - Input.mousePosition.y);
 
         if (Mathf.Abs(x) < Mathf.Abs(y))
           x = 0;
@@ -36,10 +36,10 @@ public class CameraManager : MonoBehaviour
 
         var newAngle = Vector3.zero;
         newAngle.x = x * rotationSpeed.x;
-        // newAngle.y = y * rotationSpeed.y;
+        newAngle.y = y * rotationSpeed.y;
 
         mainCamera.transform.RotateAround(playerObject.transform.position, Vector3.up, newAngle.x);
-        mainCamera.transform.RotateAround(playerObject.transform.position, transform.right, newAngle.y);
+        mainCamera.transform.RotateAround(playerObject.transform.position, mainCamera.transform.right, -newAngle.y);
         lastMousePosition = Input.mousePosition;
       }
       else
