@@ -6,6 +6,7 @@ public class CameraManager : MonoBehaviour
 {
   public GameObject playerObject;
   public Vector2 rotationSpeed;
+  public float zoomSpeed;
   public bool reverse;
 
   private Camera mainCamera;
@@ -18,6 +19,9 @@ public class CameraManager : MonoBehaviour
 
   void Update()
   {
+    var scroll = Input.mouseScrollDelta.y;
+    mainCamera.transform.position += mainCamera.transform.forward * scroll * zoomSpeed;
+
     if (Input.GetMouseButtonDown(0))
     {
       lastMousePosition = Input.mousePosition;
