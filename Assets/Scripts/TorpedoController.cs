@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,10 +24,12 @@ public class TorpedoController : MonoBehaviour
 
   void OnCollisionEnter(Collision collision)
   {
+    var hitObject = collision.gameObject;
+    if (hitObject.tag.Equals("Player")) return;
+
+    Destroy(this.gameObject);
     ParticleSystem newParticle = Instantiate(this.Particle);
     newParticle.transform.position = this._transform.position;
-    Destroy(this.gameObject);
-    var hitObject = collision.gameObject;
     var shipController = hitObject.GetComponent<ShipControllerBase>();
     if (!(shipController is null)) {
       shipController.AddDamage(1000f);
