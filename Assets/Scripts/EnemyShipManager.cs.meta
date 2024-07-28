@@ -3,7 +3,9 @@ guid: 46c163bbb34a64383baba696bbf2e075
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CargoShipPrefab: {instanceID: 0}
+  - DestroyerPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
