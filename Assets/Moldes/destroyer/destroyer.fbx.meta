@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 52bc2152ed4dc824d8d53c31219964f3
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bougainville_fsc001_bougainville_1932_211
+    second: {fileID: 2100000, guid: 79780cd9ccd1d2d4dac56ff44799a091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bougainville_fsc001_bougainville_1932_wire_211
+    second: {fileID: 2100000, guid: 79780cd9ccd1d2d4dac56ff44799a091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm001_propeller_823
+    second: {fileID: 2100000, guid: f5f0b6b1f6ab15643b58cc8718a43beb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm001_propeller_829
+    second: {fileID: 2100000, guid: f5f0b6b1f6ab15643b58cc8718a43beb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm010_fire_hose_reel_28
+    second: {fileID: 2100000, guid: 0c46fc3e17b4aeb47a2884a71578f4bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm010_fire_hose_reel_813
+    second: {fileID: 2100000, guid: 0c46fc3e17b4aeb47a2884a71578f4bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm010_fire_hose_reel_815
+    second: {fileID: 2100000, guid: 0c46fc3e17b4aeb47a2884a71578f4bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm021_accommodation_ladder_491
+    second: {fileID: 2100000, guid: aae72cbda151e4b46816a941a10bf1bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm029_emergency_box_190
+    second: {fileID: 2100000, guid: 7d5ec6ada3bc8434da7306574a45582a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm029_emergency_box_825
+    second: {fileID: 2100000, guid: 7d5ec6ada3bc8434da7306574a45582a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm040_steering_wheel_817
+    second: {fileID: 2100000, guid: a2bf77ce953f95e4593a23f72a594e37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm052_fender_313
+    second: {fileID: 2100000, guid: 602b2ab81f0e6cb4c80dd134d83adf38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm082_rope_144
+    second: {fileID: 2100000, guid: 3d7ff856197960741b8e5160a5908c2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm099_compass_binnacle_337
+    second: {fileID: 2100000, guid: 26ddd2ff67984cf40accdbf0e87dbbb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm099_compass_binnacle_825
+    second: {fileID: 2100000, guid: 26ddd2ff67984cf40accdbf0e87dbbb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm121_power_hammer_975
+    second: {fileID: 2100000, guid: 9a6de21aa3d8ab448aa58577058e351a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_cm149_telegraph_598
+    second: {fileID: 2100000, guid: c16f392edf46b4d4a821d4779dfd6aa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_ff044_2m_rangefinder_80
+    second: {fileID: 2100000, guid: bbfd5c07fcd49264a8c9a2c93160e381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fgm073_100_45_mle_1921_shield_skinned_915
+    second: {fileID: 2100000, guid: 6aae2f0239037ee448cc4b5830e90e28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fgt069_550mm_2tube_593
+    second: {fileID: 2100000, guid: e9f63a1a73b9de549ae51daa2b43d182, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fgt069_550mm_2tube_wire_594
+    second: {fileID: 2100000, guid: e9f63a1a73b9de549ae51daa2b43d182, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm016_reels_893
+    second: {fileID: 2100000, guid: 696ac42d19b389147a5bc344aad4fd42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm066_easter_waistcoat_ens_gabolde_956
+    second: {fileID: 2100000, guid: 3d495a0d226cdf54f872f6aa882cbe2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm519_canot_a_rames_7m_806
+    second: {fileID: 2100000, guid: daf0ab56a1621a14c8ba578a2d77c2d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm529_tuzik_3_65m_11
+    second: {fileID: 2100000, guid: 5aaf14821b69657449565cec563017ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm532_whaleboat_7m_275
+    second: {fileID: 2100000, guid: 354498bc41b9ca743b59c86792b41b8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm607_voice_tube_542
+    second: {fileID: 2100000, guid: 6cb418e81c0f14f4c97080535dc484a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm607_voice_tube_551
+    second: {fileID: 2100000, guid: 6cb418e81c0f14f4c97080535dc484a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm851_mastheadlight_790
+    second: {fileID: 2100000, guid: 30764f34aeff40548b0753ee839d94cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm854_running_light_r_139
+    second: {fileID: 2100000, guid: a6744f3259d34f74ea9fd7509385c439, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm856_signal_lamp_948
+    second: {fileID: 2100000, guid: ccb97773fef7b4c48b1c626db9fd36e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm857_signal_white_831
+    second: {fileID: 2100000, guid: a6638ba326e73b54699fb251cc7e56fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm880_searchlight_60cm_607
+    second: {fileID: 2100000, guid: feb01d4a4b3eea04eb53849a43e5095d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm880_searchlight_60cm_wire_607
+    second: {fileID: 2100000, guid: feb01d4a4b3eea04eb53849a43e5095d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fm960_bollard_701
+    second: {fileID: 2100000, guid: 722fcec6c9008284b8f0ad2a61d93853, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fsd005_ens_gabolde_1927_449
+    second: {fileID: 2100000, guid: 1c829a8f399086d4cbe28f4e77c29ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_fsd005_ens_gabolde_1927_wire_355
+    second: {fileID: 2100000, guid: 1c829a8f399086d4cbe28f4e77c29ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enseigne_Gabolde_transparent_glass_alpha_354
+    second: {fileID: 2100000, guid: 26cd53f4a48d27941863e32569f650b1, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rightSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_pro.004
+      takeName: rightSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_pro.004
+      internalID: 7096691641766465751
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rightSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_proActi
+      takeName: rightSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_proActi
+      internalID: 3567737278843379683
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: leftSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_pro.004
+      takeName: leftSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_pro.004
+      internalID: 6248539914060429347
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: leftSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_proActi
+      takeName: leftSc|FSD005_Ens_Gabolde_1927_midfront_Enseigne_Gabolde_cm001_proActi
+      internalID: -8650208451028125319
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
