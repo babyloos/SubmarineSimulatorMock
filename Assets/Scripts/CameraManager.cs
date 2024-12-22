@@ -26,7 +26,6 @@ public class CameraManager : MonoBehaviour
     // z方向には回転しない
     if (mainCamera.transform.rotation.z != 0f)
     {
-      Debug.Log(mainCamera.transform.rotation.z);
       Quaternion currentRotation = mainCamera.transform.rotation;
       mainCamera.transform.rotation = Quaternion.Euler(currentRotation.eulerAngles.x, currentRotation.eulerAngles.y, 0f);
     }
