@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,14 @@ public class CameraManager : MonoBehaviour
     var scroll = Input.mouseScrollDelta.y;
     mainCamera.transform.position += mainCamera.transform.forward * scroll * zoomSpeed;
 
+    // z方向には回転しない
+    if (mainCamera.transform.rotation.z != 0f)
+    {
+      Debug.Log(mainCamera.transform.rotation.z);
+      Quaternion currentRotation = mainCamera.transform.rotation;
+      mainCamera.transform.rotation = Quaternion.Euler(currentRotation.eulerAngles.x, currentRotation.eulerAngles.y, 0f);
+    }
+
     if (Input.GetMouseButtonDown(0))
     {
       lastMousePosition = Input.mousePosition;
@@ -29,7 +38,8 @@ public class CameraManager : MonoBehaviour
     else if (Input.GetMouseButton(0))
     {
       var speed = rotationSpeed;
-      if (reverse) {
+      if (reverse)
+      {
         speed *= -1;
       }
 
@@ -47,6 +57,7 @@ public class CameraManager : MonoBehaviour
 
       mainCamera.transform.RotateAround(playerObject.transform.position, Vector3.up, newAngle.x);
       mainCamera.transform.RotateAround(playerObject.transform.position, mainCamera.transform.right, -newAngle.y);
+
       lastMousePosition = Input.mousePosition;
     }
   }
