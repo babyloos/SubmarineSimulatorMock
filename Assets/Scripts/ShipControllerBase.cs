@@ -95,23 +95,43 @@ public class ShipControllerBase : MonoBehaviour
 
     private void UpdateDepth()
     {
-        this._depth = this._transform.position.y;
-        var depthSpeed = 10f + this._speed / 2;
-        if (this._depth != this._distDepth)
-        {
-            var direction = new Vector3(0f, 0f, 0f);
-            if (this._depth > this._distDepth)
-            {
-                direction = -this._transform.up;
-            }
-            else if (this._depth < this._distDepth)
-            {
-                direction = this._transform.up;
-            }
-
-            var force = Math.Abs(this._depth - this._distDepth) * 100;
-            this._rigidbody.AddForce(direction * (depthSpeed * force), ForceMode.Force);
+        if (this._rigidbody == null) {
+            return;
         }
+
+        this._depth = this._transform.position.y;
+        if (this._depth > this._distDepth)
+        {
+            this._rigidbody.mass += 10;
+            // direction = -this._transform.up;
+        }
+        else if (this._depth < this._distDepth)
+        {
+            // direction = this._transform.up;
+            this._rigidbody.mass -= 10;
+        }
+
+        Debug.Log("this._depth: " + this._depth);
+        Debug.Log("this._distDepth: " + this._distDepth);
+
+
+        // this._depth = this._transform.position.y;
+        // var depthSpeed = 10f + this._speed / 2;
+        // if (this._depth != this._distDepth)
+        // {
+        //     var direction = new Vector3(0f, 0f, 0f);
+        //     if (this._depth > this._distDepth)
+        //     {
+        //         direction = -this._transform.up;
+        //     }
+        //     else if (this._depth < this._distDepth)
+        //     {
+        //         direction = this._transform.up;
+        //     }
+
+        //     var force = Math.Abs(this._depth - this._distDepth) * 100;
+        //     this._rigidbody.AddForce(direction * (depthSpeed * force), ForceMode.Force);
+        // }
     }
 
     protected virtual void UpdateDirection()
