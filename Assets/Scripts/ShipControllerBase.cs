@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Common;
+using Crest;
 
 public class ShipControllerBase : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class ShipControllerBase : MonoBehaviour
     protected const float MAX_WEIGHT = (float)(DEFAULT_WEIGHT * 10);
 
     private Rigidbody _rigidbody;
-    protected Transform _transform;
     private Animator _animator;
     private Vector4 _velocity;
+
+    protected Transform _transform;
+    protected BoatProbes _boatProbes;
 
     private float _distSpeed = 0f;  // mater/sec
     private float _speed = 0f;
@@ -28,6 +31,7 @@ public class ShipControllerBase : MonoBehaviour
     {
         this._rigidbody = GetComponent<Rigidbody>();
         this._transform = GetComponent<Transform>();
+        this._boatProbes = GetComponent<BoatProbes>();
     }
 
     protected void Update()
@@ -47,28 +51,32 @@ public class ShipControllerBase : MonoBehaviour
 
     public void ChangeEngineOut(EngineOut engineOut)
     {
+        if (this._boatProbes == null) {
+            return;
+        }
+
         switch (engineOut)
         {
             case EngineOut.AheadFull:
-                this._distSpeed = 20.0f;
+                this._boatProbes._engineBias = -1.5f;
                 break;
             case EngineOut.AheadHalf:
-                this._distSpeed = 10.0f;
+                this._boatProbes._engineBias = -0.75f;
                 break;
             case EngineOut.AheadSlow:
-                this._distSpeed = 5.0f;
+                this._boatProbes._engineBias = -0.375f;
                 break;
             case EngineOut.AllStop:
-                this._distSpeed = 0.0f;
+                this._boatProbes._engineBias = 0f;
                 break;
             case EngineOut.AsternSlow:
-                this._distSpeed = -3.0f;
+                this._boatProbes._engineBias = 0.2f;
                 break;
             case EngineOut.AsternHalf:
-                this._distSpeed = -7.0f;
+                this._boatProbes._engineBias = 0.4f;
                 break;
             case EngineOut.AsternFull:
-                this._distSpeed = -15.0f;
+                this._boatProbes._engineBias = 1f;
                 break;
             default:
                 break;
