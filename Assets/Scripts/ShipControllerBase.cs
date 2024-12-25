@@ -6,8 +6,8 @@ using Common;
 
 public class ShipControllerBase : MonoBehaviour
 {
-    private const float DEFAULT_WEIGHT = 10000;
-    private const float MAX_WEIGHT = (float)(DEFAULT_WEIGHT * 10);
+    protected const float DEFAULT_WEIGHT = 10000;
+    protected const float MAX_WEIGHT = (float)(DEFAULT_WEIGHT * 10);
 
     private Rigidbody _rigidbody;
     protected Transform _transform;
