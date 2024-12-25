@@ -6,6 +6,9 @@ using Common;
 
 public class ShipControllerBase : MonoBehaviour
 {
+    private const float DEFAULT_WEIGHT = 10000;
+    private const float MAX_WEIGHT = (float)(DEFAULT_WEIGHT * 10);
+
     private Rigidbody _rigidbody;
     protected Transform _transform;
     private Animator _animator;
@@ -95,43 +98,37 @@ public class ShipControllerBase : MonoBehaviour
 
     private void UpdateDepth()
     {
-        if (this._rigidbody == null) {
+        if (this._rigidbody == null)
+        {
             return;
         }
 
         this._depth = this._transform.position.y;
+
+        if (this._depth == this._distDepth)
+        {
+            return;
+        }
+
         if (this._depth > this._distDepth)
         {
-            this._rigidbody.mass += 10;
-            // direction = -this._transform.up;
+            if (this._rigidbody.mass + 10 < MAX_WEIGHT)
+            {
+                // 潜水
+                this._rigidbody.mass += 10;
+            }
         }
         else if (this._depth < this._distDepth)
         {
-            // direction = this._transform.up;
-            this._rigidbody.mass -= 10;
+            if (this._rigidbody.mass - 10 > DEFAULT_WEIGHT)
+            {
+                // 浮上
+                this._rigidbody.mass -= 10;
+            }
         }
 
-        Debug.Log("this._depth: " + this._depth);
-        Debug.Log("this._distDepth: " + this._distDepth);
-
-
-        // this._depth = this._transform.position.y;
-        // var depthSpeed = 10f + this._speed / 2;
-        // if (this._depth != this._distDepth)
-        // {
-        //     var direction = new Vector3(0f, 0f, 0f);
-        //     if (this._depth > this._distDepth)
-        //     {
-        //         direction = -this._transform.up;
-        //     }
-        //     else if (this._depth < this._distDepth)
-        //     {
-        //         direction = this._transform.up;
-        //     }
-
-        //     var force = Math.Abs(this._depth - this._distDepth) * 100;
-        //     this._rigidbody.AddForce(direction * (depthSpeed * force), ForceMode.Force);
-        // }
+        // Debug.Log("this._depth: " + this._depth);
+        // Debug.Log("this._distDepth: " + this._distDepth);
     }
 
     protected virtual void UpdateDirection()
