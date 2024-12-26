@@ -9,18 +9,21 @@ public class ShipControllerBase : MonoBehaviour
 {
     protected const float DEFAULT_WEIGHT = 10000;
     protected const float MAX_WEIGHT = (float)(DEFAULT_WEIGHT * 10);
+    protected const float MAX_TURN_POWER = 50f;
 
-    private Rigidbody _rigidbody;
+    protected Rigidbody _rigidbody;
     private Animator _animator;
     private Vector4 _velocity;
 
     protected Transform _transform;
     protected BoatProbes _boatProbes;
+    protected float _distTurnPower = 0f;
+    protected float _rotateSpeed = 0.1f;
 
     private float _distSpeed = 0f;  // mater/sec
     private float _speed = 0f;
     protected float _course = 0f;
-    private float _distCourse = 0f;
+    protected float _distCourse = 0f;
     private float _rotateAngle = 0f;
     private float _depth = 0f;
     private float _distDepth = 0.0f;
