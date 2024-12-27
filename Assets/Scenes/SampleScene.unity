@@ -1363,8 +1363,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1594471979}
   m_HandleRect: {fileID: 1594471978}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.69470835
+  m_Value: 1.0000026
+  m_Size: 0.92923915
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2407,7 +2407,7 @@ Transform:
   m_GameObject: {fileID: 1865253997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 88.8, y: 0, z: -100}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _version: 0
-  _centerOfMass: {x: 0, y: -0.1, z: 0}
+  _centerOfMass: {x: 0, y: -2, z: 0}
   _forcePoints:
   - _weight: 5000
     _offsetPosition: {x: 0, y: 0, z: -30}
@@ -2515,10 +2515,10 @@ MonoBehaviour:
   _dragInWaterRight: 2
   _dragInWaterForward: 1
   _enginePower: 7
-  _turnPower: 0.5
+  _turnPower: 0
   _playerControlled: 1
   _engineBias: 0
-  _turnBias: 0
+  _turnBias: 0.001
   _debug:
     _drawQueries: 0
 --- !u!1 &1955955012

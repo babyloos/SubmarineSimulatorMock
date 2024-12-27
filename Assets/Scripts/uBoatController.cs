@@ -21,7 +21,6 @@ public class UBoatController : ShipControllerBase
 
     protected override void UpdateDirection()
     {
-        base.UpdateDirection();
         this.CompassBackController.SetRotate(this._course);
 
         if (this._boatProbes == null)
@@ -50,6 +49,8 @@ public class UBoatController : ShipControllerBase
             this._distTurnPower = 0f;
         }
 
+        Debug.Log("distTurnPower: " + this._distTurnPower);
+
         if (this._boatProbes._turnPower == this._distTurnPower)
         {
             return;
@@ -67,8 +68,9 @@ public class UBoatController : ShipControllerBase
         Debug.Log("速さ (スカラー値): " + khour + " km/h");
         Debug.Log("速さ (スカラー値): " + kt + " kt/h");
 
+        var changeRotateSpeedByAFrame = kt * this._rotateSpeed * Time.deltaTime;
         this._boatProbes._turnPower = this._boatProbes._turnPower < this._distTurnPower ?
-                                     this._boatProbes._turnPower + this._rotateSpeed : this._boatProbes._turnPower - this._rotateSpeed;
+                                     this._boatProbes._turnPower + changeRotateSpeedByAFrame : this._boatProbes._turnPower - changeRotateSpeedByAFrame;
     }
 
     public void FireTorpedo()
