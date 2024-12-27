@@ -158,9 +158,9 @@ MonoBehaviour:
   _centerOfMass: {x: 0, y: 0, z: 0}
   _forcePoints:
   - _weight: 5000
-    _offsetPosition: {x: 0, y: 0, z: 0}
+    _offsetPosition: {x: 0, y: 0, z: 100}
   - _weight: 5000
-    _offsetPosition: {x: 0, y: 0, z: 0}
+    _offsetPosition: {x: 0, y: 0, z: -100}
   _forceHeightOffset: 0
   _forceMultiplier: 10
   _minSpatialLength: 12
