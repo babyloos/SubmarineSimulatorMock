@@ -35,17 +35,14 @@ public class UBoatController : ShipControllerBase
         rotateDiff = (float)Math.Floor(rotateDiff);
         if (rotateDiff < 0)
         {
-            // this._boatProbes._turnBias = -2f;
             this._distTurnPower = -MAX_TURN_POWER;
         }
         else if (rotateDiff > 0)
         {
-            // this._boatProbes._turnBias = 2f;
             this._distTurnPower = MAX_TURN_POWER;
         }
         else
         {
-            // this._boatProbes._turnBias = 0f;
             this._distTurnPower = 0f;
         }
 
