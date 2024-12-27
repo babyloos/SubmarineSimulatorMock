@@ -8,10 +8,10 @@ public class EnemyShipManager : MonoBehaviour
   public GameObject DestroyerPrefab;
 
   void Start () {
-    Instantiate(this.CargoShipPrefab, new Vector3(-1000.0f,0.0f,-200.0f), Quaternion.Euler(0, 90f, 0));
-    Instantiate(this.CargoShipPrefab, new Vector3(-1000.0f,0.0f,-400.0f), Quaternion.Euler(0, 90f, 0));
-    Instantiate(this.CargoShipPrefab, new Vector3(-1000.0f,0.0f,-600.0f), Quaternion.Euler(0, 90f, 0));
-    Instantiate(this.DestroyerPrefab, new Vector3(-1000.0f,0.0f,-800.0f), Quaternion.Euler(0, 90f, 0));
+    Instantiate(this.CargoShipPrefab, new Vector3(-100.0f,0.0f,-200.0f), Quaternion.Euler(0, 90f, 0));
+    Instantiate(this.CargoShipPrefab, new Vector3(-100.0f,0.0f,-400.0f), Quaternion.Euler(0, 90f, 0));
+    Instantiate(this.CargoShipPrefab, new Vector3(-100.0f,0.0f,-600.0f), Quaternion.Euler(0, 90f, 0));
+    Instantiate(this.DestroyerPrefab, new Vector3(-100.0f,0.0f,-800.0f), Quaternion.Euler(0, 90f, 0));
   }
 
   void Update()

@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3852818101175193862}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 99444978909531150}
   m_SourcePrefab: {fileID: 100100000, guid: cc7ab9f27bf474ec4b7548ccc56d2d0a, type: 3}
 --- !u!1 &952429489134907455 stripped
 GameObject:
@@ -85,7 +88,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952429489134907455}
   serializedVersion: 4
-  m_Mass: 1000000
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -99,7 +102,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -139,3 +142,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec4a4cc068da459f96abaabf8904f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &99444978909531150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952429489134907455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb499a376b0c094f92b8f70c0966934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _version: 0
+  _centerOfMass: {x: 0, y: 0, z: 0}
+  _forcePoints:
+  - _weight: 5000
+    _offsetPosition: {x: 0, y: 0, z: 0}
+  - _weight: 5000
+    _offsetPosition: {x: 0, y: 0, z: 0}
+  _forceHeightOffset: 0
+  _forceMultiplier: 10
+  _minSpatialLength: 12
+  _turningHeel: 0.35
+  _maximumBuoyancyForce: Infinity
+  _dragInWaterUp: 3
+  _dragInWaterRight: 2
+  _dragInWaterForward: 1
+  _enginePower: -10
+  _turnPower: 0
+  _playerControlled: 1
+  _engineBias: 0
+  _turnBias: 0.01
+  _debug:
+    _drawQueries: 0
