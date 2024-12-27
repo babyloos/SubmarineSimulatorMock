@@ -169,7 +169,7 @@ MonoBehaviour:
   _dragInWaterUp: 3
   _dragInWaterRight: 2
   _dragInWaterForward: 1
-  _enginePower: -10
+  _enginePower: 7
   _turnPower: 0
   _playerControlled: 1
   _engineBias: 0

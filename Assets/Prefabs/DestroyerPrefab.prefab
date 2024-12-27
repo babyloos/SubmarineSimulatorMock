@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: -302570091613681936}
   - component: {fileID: 4326786988116922365}
   - component: {fileID: 978717687067643949}
+  - component: {fileID: 678715559266711657}
   m_Layer: 0
   m_Name: DestroyerPrefab
   m_TagString: Untagged
@@ -329,7 +330,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7390038511060655371}
   serializedVersion: 4
-  m_Mass: 1000000
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -383,3 +384,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec4a4cc068da459f96abaabf8904f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &678715559266711657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390038511060655371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb499a376b0c094f92b8f70c0966934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _version: 0
+  _centerOfMass: {x: 0, y: 0, z: 0}
+  _forcePoints: []
+  _forceHeightOffset: 0
+  _forceMultiplier: 10
+  _minSpatialLength: 12
+  _turningHeel: 0.35
+  _maximumBuoyancyForce: Infinity
+  _dragInWaterUp: 3
+  _dragInWaterRight: 2
+  _dragInWaterForward: 1
+  _enginePower: 7
+  _turnPower: 0.5
+  _playerControlled: 1
+  _engineBias: 0
+  _turnBias: 0
+  _debug:
+    _drawQueries: 0
