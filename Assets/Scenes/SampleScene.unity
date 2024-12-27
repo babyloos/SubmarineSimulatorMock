@@ -1363,8 +1363,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1594471979}
   m_HandleRect: {fileID: 1594471978}
   m_Direction: 2
-  m_Value: 1.0000026
-  m_Size: 0.92923915
+  m_Value: 1.0000013
+  m_Size: 0.9276715
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1791,6 +1791,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 665494da211714bd2a783fb46a1ffc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 665494da211714bd2a783fb46a1ffc21, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 665494da211714bd2a783fb46a1ffc21, type: 3}
@@ -2447,7 +2451,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 10000
   m_Drag: 0
-  m_AngularDrag: 2
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2462,7 +2466,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &1905823879
 CapsuleCollider:
@@ -2518,7 +2522,7 @@ MonoBehaviour:
   _turnPower: 0
   _playerControlled: 1
   _engineBias: 0
-  _turnBias: 0.001
+  _turnBias: 0.01
   _debug:
     _drawQueries: 0
 --- !u!1 &1955955012
