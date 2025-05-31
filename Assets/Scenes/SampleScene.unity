@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 245714029}
   - component: {fileID: 245714028}
   m_Layer: 5
-  m_Name: watchButton
+  m_Name: observerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 444487915}
   - component: {fileID: 444487914}
   m_Layer: 5
-  m_Name: watchButton
+  m_Name: observerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

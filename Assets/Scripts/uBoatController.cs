@@ -46,7 +46,7 @@ public class UBoatController : ShipControllerBase
             this._distTurnPower = 0f;
         }
 
-        Debug.Log("distTurnPower: " + this._distTurnPower);
+        // Debug.Log("distTurnPower: " + this._distTurnPower);
 
         if (this._boatProbes._turnPower == this._distTurnPower)
         {
