@@ -7,6 +7,6 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerData)
     {
-        messageController.ShowMessage("観測");
+        messageController.ShowMessage(ROLE.Observer, "敵が見えました");
     }
 }
