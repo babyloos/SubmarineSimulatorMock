@@ -5,20 +5,23 @@ using System.Net;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class MessageController : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;
+    private LocalizationManager locale;
 
     void Start()
     {
+        locale = LocalizationManager.Instance;
     }
 
     public void ShowMessage(ROLE role, List<String> messages)
     {
         var resultMessage = "";
         foreach (var message in messages) {
-            var text = role.GetStringValue() + ": " + message;
+            var text = this.locale.GetLocalizedText("words", role.GetStringValue()) + ": " + message;
             resultMessage += text + "\n";
         }
         textMeshPro.text += resultMessage;
