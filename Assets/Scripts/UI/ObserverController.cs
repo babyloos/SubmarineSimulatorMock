@@ -25,7 +25,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         var messages = new List<String>();
         if (observationShipInfos.Count == 0)
         {
-            messages.Add(this.locale.GetLocalizedText("words", "RES_NoShips"));
+            messages.Add(this.locale.GetLocalizedText("RES_NoShips"));
         }
         else
         {

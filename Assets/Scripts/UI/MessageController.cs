@@ -21,7 +21,7 @@ public class MessageController : MonoBehaviour
     {
         var resultMessage = "";
         foreach (var message in messages) {
-            var text = this.locale.GetLocalizedText("words", role.GetStringValue()) + ": " + message;
+            var text = this.locale.GetLocalizedText(role.GetStringValue()) + ": " + message;
             resultMessage += text + "\n";
         }
         textMeshPro.text += resultMessage;

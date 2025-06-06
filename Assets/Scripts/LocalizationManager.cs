@@ -91,8 +91,9 @@ public class LocalizationManager : MonoBehaviour
     /// <param name="tableName">String Table の名前</param>
     /// <param name="key">翻訳キー</param>
     /// <returns>翻訳済みテキスト。見つからない場合は "#key"</returns>
-    public string GetLocalizedText(string tableName, string key)
+    public string GetLocalizedText(string key)
     {
+        var tableName = "words";
         var table = LocalizationSettings.StringDatabase.GetTable(tableName);
         if (table == null)
         {
