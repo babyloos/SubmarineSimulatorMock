@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: words
   m_TableCollectionNameGuidString: 36a5ec29ed4dd6c4eb83b6d6f02c5188
-  m_Entries: []
+  m_Entries:
+  - m_Id: 45628846080
+    m_Key: RES_NoShips
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

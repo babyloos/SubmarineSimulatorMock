@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 public class ObserverController : MonoBehaviour, IPointerClickHandler
 {
     public MessageController messageController;
+    private LocalizationManager locale;
+
+    public void Start()
+    {
+        this.locale = LocalizationManager.Instance;
+    }
 
     public void OnPointerClick(PointerEventData pointerData)
     {
@@ -19,7 +25,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         var messages = new List<String>();
         if (observationShipInfos.Count == 0)
         {
-            messages.Add("船影無し！");
+            messages.Add(this.locale.GetLocalizedText("words", "RES_NoShips"));
         }
         else
         {
@@ -41,7 +47,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
     {
         return new List<ObservationShipInfo>
         {
-            new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
+            // new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
         };
     }
 
