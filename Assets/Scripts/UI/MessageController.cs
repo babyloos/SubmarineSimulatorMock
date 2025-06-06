@@ -14,10 +14,14 @@ public class MessageController : MonoBehaviour
     {
     }
 
-    public void ShowMessage(ROLE role, String message)
+    public void ShowMessage(ROLE role, List<String> messages)
     {
-        var text = role.GetStringValue() + ": " + message + "\n";
-        textMeshPro.text += text;
+        var resultMessage = "";
+        foreach (var message in messages) {
+            var text = role.GetStringValue() + ": " + message;
+            resultMessage += text + "\n";
+        }
+        textMeshPro.text += resultMessage;
     }
 
 }

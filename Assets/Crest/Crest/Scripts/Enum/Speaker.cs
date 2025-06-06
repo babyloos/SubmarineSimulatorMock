@@ -1,5 +1,5 @@
 public enum ROLE
 {
-    [StringValue("Monitor")]
+    [StringValue("監視員")]
     Observer,
 }

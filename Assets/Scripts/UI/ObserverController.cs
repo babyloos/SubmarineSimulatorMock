@@ -10,13 +10,31 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData pointerData)
     {
         var observationShipInfos = this.observation();
-        // var message = this.createMessage(observation);
-        messageController.ShowMessage(ROLE.Observer, "敵が見えました");
+        var messages = this.createMessage(observationShipInfos);
+        messageController.ShowMessage(ROLE.Observer, messages);
     }
 
-    private void createMessage(Func<List<ObservationShipInfo>> observation)
+    private List<String> createMessage(List<ObservationShipInfo> observationShipInfos)
     {
-        throw new NotImplementedException();
+        var messages = new List<String>();
+        if (observationShipInfos.Count == 0)
+        {
+            messages.Add("船影無し！");
+        }
+        else
+        {
+            messages.Add("船影を" + observationShipInfos.Count + "隻確認！");
+            var count = 0;
+            foreach (var info in observationShipInfos)
+            {
+                count += 1;
+                var shipName = "敵船" + count;
+                var shipMessaage = shipName + " " + "方位" + info.Direction + ", " + "距離" + info.Range + ", " + "針路" + info.Course + ", " + "船速" + info.Speed;
+                messages.Add(shipMessaage);
+            }
+        }
+
+        return messages;
     }
 
     private List<ObservationShipInfo> observation()
