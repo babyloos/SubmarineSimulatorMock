@@ -38,6 +38,9 @@ public class LocalizationManager : MonoBehaviour
         isInitialized = true;
 
         Debug.Log($"初期言語: {GetCurrentLanguageCode()}");
+
+        // debug
+        ChangeLanguage("en");
     }
 
     /// <summary>
