@@ -40,7 +40,7 @@ public class LocalizationManager : MonoBehaviour
         Debug.Log($"初期言語: {GetCurrentLanguageCode()}");
 
         // debug
-        ChangeLanguage("en");
+        ChangeLanguage("ja");
     }
 
     /// <summary>
