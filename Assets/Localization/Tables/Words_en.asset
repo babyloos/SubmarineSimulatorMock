@@ -1,0 +1,399 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Words_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 2b95d0a6c5722a64da996518f688c260, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 837873664
+    m_Localized: Submarine 3D simulator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039488
+    m_Localized: New game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039489
+    m_Localized: Skirmish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039490
+    m_Localized: Mission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039491
+    m_Localized: Difficulty selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039492
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039493
+    m_Localized: Manual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233792
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233793
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233794
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233795
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233796
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233797
+    m_Localized: Game purpose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233798
+    m_Localized: 'In Nazi Germany during World War II, submarines called unlimited
+      submarines were being operated to cause damage to the enemy economy. <br>
+
+      The
+      purpose of this game is to lead a submarine as captain of the German submarine
+      U-BOAT during World War II and sink the enemy ship by torpedo attack.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233799
+    m_Localized: Game mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233800
+    m_Localized: Game modes include "Skirmish" and "Mission".
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233801
+    m_Localized: '"Skirmish" is intended for short gameplay, and the game starts
+      with you already deep inside the enemy convoy.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233802
+    m_Localized: Survive attacks from destroyers and try to sink merchant ships.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233803
+    m_Localized: A "mission" begins with searching for enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233804
+    m_Localized: Use periscope depth to locate enemy convoy, approach them quietly,
+      and try to sink the merchant ships.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233805
+    m_Localized: Difficulty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233806
+    m_Localized: Depending on the difficulty, the number of enemy ships and the number
+      of sinking tons required for clearing will change.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233807
+    m_Localized: Number of destroyers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233808
+    m_Localized: Number of merchant ships
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233809
+    m_Localized: Number of sinking tons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233810
+    m_Localized: Operation explanation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233811
+    m_Localized: Submarine movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233812
+    m_Localized: "To move the submarine, do it from the controlled panel at the lower
+      left.\n The control panels include \"engine telegraph\", \"direction instructor\",
+      and \"depth indicator\", and you can change the engine output, travel direction,
+      and depth of the submarine by operating each."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233813
+    m_Localized: Watching, hearing sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233814
+    m_Localized: 'You can check the surrounding status from the instruction panel
+      at the bottom right. <br>
+
+      By tapping each button, the information of
+      the enemy ship confirmed in the upper left message panel is displayed. <br>
+
+      You
+      can visually watch the look -imized buttons on the left, and to hear the hydropone
+      with the central listening button. <br>
+
+      Visually lookouts can only be
+      used when submarines are emerging and hyprophones are diving.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233815
+    m_Localized: Periscope screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233816
+    m_Localized: 'You can display the periscope screen by tapping the periscope button
+      on the right side of the instruction panel on the lower right. <br>
+
+      On
+      the deterrent mirror screen, you will check the enemy ship with the periscope,
+      input torpedo specifications, and launch torpedoes.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233817
+    m_Localized: Double -speed display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428096
+    m_Localized: 'You can change the progress of the in -game time with the time
+      -ratio button in the upper right status panel. <br>
+
+      The time magnification
+      can be changed to 1 to 16 times.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428097
+    m_Localized: Action of enemy ships
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428098
+    m_Localized: 'The enemy fleet usually continues to move towards the destination
+      at a constant speed. <br>
+
+      However, once a submarine is found, the anti
+      -submarine sailing is entered, merchant ships proceed to avoid torpedoes, and
+      the destroyer starts attacking the submarine. <br>
+
+      There are two types
+      of destroyers attacking, and if the submarine is emerging, a bombardment will
+      be attacked, and a striking attack will be performed during submarine.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428099
+    m_Localized: Battery, oxygen remaining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428100
+    m_Localized: 'Submarines gradually decrease the battery level to turn the screw
+      with the battery. <br>
+
+      If the battery runs out, you will not be able
+      to move forward and retreat, but you can dive and rise. <br>
+
+      During
+      the voyage, the amount of oxygen remains gradually decreases due to consuming
+      oxygen in the submarine. <br>
+
+      If the amount of oxygen is 0, the game
+      will be over, so please come up and recover.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428101
+    m_Localized: Save function
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428102
+    m_Localized: 'You can save the state by tapping the end button at the top right
+      during the game, and the game can be resumed from the continuation button on
+      the title screen. <br>
+
+      In addition, the state is automatically saved
+      every minute in the game time.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428103
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428104
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622400
+    m_Localized: Battery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622401
+    m_Localized: O2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622402
+    m_Localized: Torpedos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622403
+    m_Localized: Current time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622404
+    m_Localized: Time Mag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622405
+    m_Localized: Monitor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622406
+    m_Localized: Check the ship's shadow xxx!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622407
+    m_Localized: Enemy ship
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622408
+    m_Localized: Direction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622409
+    m_Localized: Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622410
+    m_Localized: Course
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622411
+    m_Localized: Ship speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622412
+    m_Localized: No ship!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622413
+    m_Localized: Sound listener
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622414
+    m_Localized: Check xxx ships!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622415
+    m_Localized: Enemy ship
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622416
+    m_Localized: No shipon!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622417
+    m_Localized: Small volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622418
+    m_Localized: In the middle of the volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622419
+    m_Localized: Slightly loud volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816704
+    m_Localized: Loud volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816705
+    m_Localized: Ahead full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816706
+    m_Localized: Ahead half
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816707
+    m_Localized: Ahead slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816708
+    m_Localized: Engine stop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816709
+    m_Localized: Astern slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816710
+    m_Localized: Astern half
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816711
+    m_Localized: Astern full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816712
+    m_Localized: Chief engineer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816713
+    m_Localized: Navigator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816714
+    m_Localized: Change the course to xxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816715
+    m_Localized: Change the depth to xxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816716
+    m_Localized: Arrival time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816717
+    m_Localized: sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816718
+    m_Localized: times
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816719
+    m_Localized: Sinking ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816720
+    m_Localized: Clear the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816721
+    m_Localized: Return to the title screen
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

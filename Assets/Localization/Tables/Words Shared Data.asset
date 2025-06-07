@@ -1,0 +1,348 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Words Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Words
+  m_TableCollectionNameGuidString: 2b95d0a6c5722a64da996518f688c260
+  m_Entries:
+  - m_Id: 837873664
+    m_Key: RES_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039488
+    m_Key: RES_NewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039489
+    m_Key: RES_squamish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039490
+    m_Key: RES_mission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039491
+    m_Key: RES_selectDiff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039492
+    m_Key: RES_Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863039493
+    m_Key: RES_Manual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233792
+    m_Key: RES_Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233793
+    m_Key: RES_Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233794
+    m_Key: RES_Difficult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233795
+    m_Key: RES_Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233796
+    m_Key: RES_Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233797
+    m_Key: RES_Purpose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233798
+    m_Key: RES_ManualOverview
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233799
+    m_Key: RES_GameMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233800
+    m_Key: RES_GameModeDetail1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233801
+    m_Key: RES_GameModeDetail2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233802
+    m_Key: RES_GameModeDetail3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233803
+    m_Key: RES_GameModeDetail4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233804
+    m_Key: RES_GameModeDetail5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233805
+    m_Key: RES_Difficulty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233806
+    m_Key: RES_DifficultyOverview
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233807
+    m_Key: RES_EnemyCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233808
+    m_Key: RES_MerchantCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233809
+    m_Key: RES_SunkTonnage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233810
+    m_Key: RES_OperationExplanation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233811
+    m_Key: RES_SubmarineMove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233812
+    m_Key: RES_Manual1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233813
+    m_Key: RES_ManualDetail2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233814
+    m_Key: RES_ManualDetail3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233815
+    m_Key: RES_ManualDetail4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233816
+    m_Key: RES_ManualDetail5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867233817
+    m_Key: RES_ManualDetail6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428096
+    m_Key: RES_ManualDetail7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428097
+    m_Key: RES_ManualDetail8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428098
+    m_Key: RES_ManualDetail9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428099
+    m_Key: RES_ManualDetail10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428100
+    m_Key: RES_ManualDetail11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428101
+    m_Key: RES_ManualDetail12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428102
+    m_Key: RES_ManualDetail13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428103
+    m_Key: RES_back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871428104
+    m_Key: RES_Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622400
+    m_Key: RES_Battery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622401
+    m_Key: RES_RemaningO2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622402
+    m_Key: RES_RemaningTorpedo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622403
+    m_Key: RES_NowTime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622404
+    m_Key: RES_TimeMag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622405
+    m_Key: RES_Observer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622406
+    m_Key: RES_ObserverDiscover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622407
+    m_Key: RES_EnemyNum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622408
+    m_Key: RES_Direction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622409
+    m_Key: RES_Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622410
+    m_Key: RES_Course
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622411
+    m_Key: RES_ShipSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622412
+    m_Key: RES_NoShips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622413
+    m_Key: RES_Hydrophone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622414
+    m_Key: RES_HydrophoneDiscover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622415
+    m_Key: RES_EnemyShip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622416
+    m_Key: RES_NoSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622417
+    m_Key: RES_LowSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622418
+    m_Key: RES_MiddleSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 875622419
+    m_Key: RES_SomewhatLargeSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816704
+    m_Key: RES_LargeSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816705
+    m_Key: RES_AheadFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816706
+    m_Key: RES_AheadHalf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816707
+    m_Key: RES_AheadSlow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816708
+    m_Key: RES_AllStop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816709
+    m_Key: RES_AsternSlow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816710
+    m_Key: RES_AsternHalf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816711
+    m_Key: RES_AsternFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816712
+    m_Key: RES_ChiefEngineer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816713
+    m_Key: RES_Navigator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816714
+    m_Key: RES_ChangeCourse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816715
+    m_Key: RES_ChangeDepth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816716
+    m_Key: RES_ArrivalTime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816717
+    m_Key: RES_Seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816718
+    m_Key: RES_Times
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816719
+    m_Key: RES_Sinking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816720
+    m_Key: RES_Clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 879816721
+    m_Key: RES_BackToTitle
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3641991677267673285
+  references:
+    version: 2
+    RefIds:
+    - rid: 3641991677267673285
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1749269221812
