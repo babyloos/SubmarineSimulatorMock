@@ -29,13 +29,17 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            messages.Add("船影を" + observationShipInfos.Count + "隻確認！");
+            messages.Add(this.locale.GetLocalizedText("RES_ObserverDiscover").Replace("xxx", observationShipInfos.Count.ToString()));
             var count = 0;
             foreach (var info in observationShipInfos)
             {
                 count += 1;
-                var shipName = "敵船" + count;
-                var shipMessaage = shipName + " " + "方位" + info.Direction + ", " + "距離" + info.Range + ", " + "針路" + info.Course + ", " + "船速" + info.Speed;
+                var shipName = this.locale.GetLocalizedText("RES_EnemyNum").Replace("xxx", count.ToString());
+                var shipMessaage = shipName + " " +
+                                   this.locale.GetLocalizedText("RES_Direction") + info.Direction + ", " +
+                                   this.locale.GetLocalizedText("RES_Range") + info.Range + ", " +
+                                   this.locale.GetLocalizedText("RES_Course") + info.Course + ", " +
+                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed;
                 messages.Add(shipMessaage);
             }
         }
@@ -47,7 +51,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
     {
         return new List<ObservationShipInfo>
         {
-            // new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
+            new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
         };
     }
 
