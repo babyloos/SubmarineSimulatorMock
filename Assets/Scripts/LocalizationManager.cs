@@ -93,7 +93,7 @@ public class LocalizationManager : MonoBehaviour
     /// <returns>翻訳済みテキスト。見つからない場合は "#key"</returns>
     public string GetLocalizedText(string key)
     {
-        var tableName = "words";
+        var tableName = "Words";
         var table = LocalizationSettings.StringDatabase.GetTable(tableName);
         if (table == null)
         {
