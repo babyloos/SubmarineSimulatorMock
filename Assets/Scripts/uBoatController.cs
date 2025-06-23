@@ -61,9 +61,9 @@ public class UBoatController : ShipControllerBase
         float khour = msecond * 60 * 60 / 1000;
         float kt = khour / 1.852f;
 
-        Debug.Log("速度 (ベクトル): " + currentVelocity);
-        Debug.Log("速さ (スカラー値): " + khour + " km/h");
-        Debug.Log("速さ (スカラー値): " + kt + " kt/h");
+        // Debug.Log("速度 (ベクトル): " + currentVelocity);
+        // Debug.Log("速さ (スカラー値): " + khour + " km/h");
+        // Debug.Log("速さ (スカラー値): " + kt + " kt/h");
 
         var changeRotateSpeedByAFrame = kt * this._rotateSpeed * Time.deltaTime;
         this._boatProbes._turnPower = this._boatProbes._turnPower < this._distTurnPower ?
