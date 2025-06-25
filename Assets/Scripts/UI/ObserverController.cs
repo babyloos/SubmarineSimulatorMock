@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -49,6 +50,33 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
 
     private List<ObservationShipInfo> observation()
     {
+        // TODO: 潜航中は呼べない
+
+        var ships = new List<GameObject>();
+        var cargoShips = GameObject.FindGameObjectsWithTag("CargoShip").ToList();
+        var destroyers = GameObject.FindGameObjectsWithTag("Destroyer").ToList();
+        ships = cargoShips;
+        ships.AddRange(destroyers);
+
+        var player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("自分の位置: " + player.transform.position);
+
+        var foundShips = new List<GameObject>();
+
+        // 目視可能範囲は半径7マイル(12.964KM)
+        var searchRange = 12.964 * 1000;
+        foreach (GameObject ship in ships)
+        {
+            float distance = Vector3.Distance(player.transform.position, ship.transform.position);
+            if (distance < searchRange)
+            {
+                Debug.Log(distance);
+                foundShips.Add(ship);
+            }
+        }
+
+        Debug.Log(foundShips);
+
         return new List<ObservationShipInfo>
         {
             new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
