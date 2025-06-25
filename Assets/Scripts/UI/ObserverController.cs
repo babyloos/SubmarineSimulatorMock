@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -76,11 +77,18 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         }
 
         Debug.Log(foundShips);
+        var shipInfos = new List<ObservationShipInfo>();
+        foreach (var foundShip in foundShips) {
+            var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
+            Vector3 toTarget = foundShip.transform.position - player.transform.position;
+            float direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
+            if (direction < 0) direction += 360;
 
-        return new List<ObservationShipInfo>
-        {
-            new ObservationShipInfo(SHIP_TYPE.MERCHANT, 300f, 300f, 100, 100)
-        };
+            var shipInfo = new ObservationShipInfo(shipType, direction, 300f, 100, 100);
+            shipInfos.Add(shipInfo);
+        }
+
+        return shipInfos;
     }
 
     internal class ObservationShipInfo
