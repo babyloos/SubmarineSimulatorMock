@@ -80,15 +80,23 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         var shipInfos = new List<ObservationShipInfo>();
         foreach (var foundShip in foundShips) {
             var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
-            Vector3 toTarget = foundShip.transform.position - player.transform.position;
-            float direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
-            if (direction < 0) direction += 360;
+            var direction = this.calcDirection(player, foundShip);
 
             var shipInfo = new ObservationShipInfo(shipType, direction, 300f, 100, 100);
             shipInfos.Add(shipInfo);
         }
 
         return shipInfos;
+    }
+
+
+    // 自分から見た敵の方位を360度で返す
+    private float calcDirection(GameObject mine, GameObject target)
+    {
+        var toTarget = target.transform.position - mine.transform.position;
+        var direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
+        if (direction < 0) direction += 360;
+        return direction;
     }
 
     internal class ObservationShipInfo
