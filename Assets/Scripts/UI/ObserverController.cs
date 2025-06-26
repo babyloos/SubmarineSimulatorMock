@@ -90,7 +90,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
     }
 
 
-    // 自分から見た敵の方位を360度で返す
+    // 自分から見た絶対方位を360度で返す
     private float calcDirection(GameObject mine, GameObject target)
     {
         var toTarget = target.transform.position - mine.transform.position;
