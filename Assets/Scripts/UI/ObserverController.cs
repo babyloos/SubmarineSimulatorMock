@@ -41,7 +41,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
                                    this.locale.GetLocalizedText("RES_Direction") + info.Direction + ", " +
                                    this.locale.GetLocalizedText("RES_Range") + info.Range + ", " +
                                    this.locale.GetLocalizedText("RES_Course") + info.Course + ", " +
-                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed;
+                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed + "Kn";
                 messages.Add(shipMessaage);
             }
         }
@@ -81,7 +81,8 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
             var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
             var direction = this.calcDirection(player, foundShip);
             var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
-            var shipInfo = new ObservationShipInfo(shipType, direction, cource, 100, 100);
+            var speed = Mathf.RoundToInt(foundShip.GetComponent<Rigidbody>().velocity.magnitude);
+            var shipInfo = new ObservationShipInfo(shipType, direction, cource, speed, 100);
             shipInfos.Add(shipInfo);
         }
 
