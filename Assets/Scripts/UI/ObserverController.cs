@@ -39,9 +39,9 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
                 var shipName = this.locale.GetLocalizedText("RES_EnemyNum").Replace("xxx", count.ToString());
                 var shipMessaage = shipName + " " +
                                    this.locale.GetLocalizedText("RES_Direction") + info.Direction + ", " +
-                                   this.locale.GetLocalizedText("RES_Range") + info.Range + ", " +
+                                   this.locale.GetLocalizedText("RES_Range") + info.Range + "m, " +
                                    this.locale.GetLocalizedText("RES_Course") + info.Course + ", " +
-                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed + "Kn";
+                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed + "Kn!";
                 messages.Add(shipMessaage);
             }
         }
@@ -82,7 +82,9 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
             var direction = this.calcDirection(player, foundShip);
             var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
             var speed = Mathf.RoundToInt(foundShip.GetComponent<Rigidbody>().velocity.magnitude);
-            var shipInfo = new ObservationShipInfo(shipType, direction, cource, speed, 100);
+            var distance = Mathf.RoundToInt(Vector3.Distance(player.transform.position, foundShip.transform.position));
+
+            var shipInfo = new ObservationShipInfo(shipType, direction, cource, speed, distance);
             shipInfos.Add(shipInfo);
         }
 
