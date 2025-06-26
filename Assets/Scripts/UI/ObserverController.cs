@@ -76,13 +76,12 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        Debug.Log(foundShips);
         var shipInfos = new List<ObservationShipInfo>();
         foreach (var foundShip in foundShips) {
             var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
             var direction = this.calcDirection(player, foundShip);
-
-            var shipInfo = new ObservationShipInfo(shipType, direction, 300f, 100, 100);
+            var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
+            var shipInfo = new ObservationShipInfo(shipType, direction, cource, 100, 100);
             shipInfos.Add(shipInfo);
         }
 
