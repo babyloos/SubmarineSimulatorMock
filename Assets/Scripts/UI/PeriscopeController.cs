@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PeriscopeContoller : MonoBehaviour, IPointerClickHandler
+public class PeriscopeContoller : MonoBehaviour
 {
     public GameObject mainPanel;
     public GameObject perisocpePanel;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnClick()
     {
         if (mainPanel.activeSelf)
         {
@@ -18,10 +18,5 @@ public class PeriscopeContoller : MonoBehaviour, IPointerClickHandler
             perisocpePanel.SetActive(false);
             mainPanel.SetActive(true);
         }
-    }
-
-    public void Start()
-    {
-
     }
 }
