@@ -8,7 +8,16 @@ public class PeriscopeContoller : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        mainPanel.SetActive(false);
+        if (mainPanel.activeSelf)
+        {
+            mainPanel.SetActive(false);
+            perisocpePanel.SetActive(true);
+        }
+        else
+        {
+            perisocpePanel.SetActive(false);
+            mainPanel.SetActive(true);
+        }
     }
 
     public void Start()
