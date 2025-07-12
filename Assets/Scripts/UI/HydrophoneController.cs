@@ -28,7 +28,6 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
 
     private List<FoundShipInfo> findships()
     {
-        // TODO: 浮上中は監視できない
         // ※浮上中はボタン押下できず呼ばれないはず
         if (player.GetComponent<UBoatController>().DepthState() == SURFACE_STATUS.SURFACE)
         {

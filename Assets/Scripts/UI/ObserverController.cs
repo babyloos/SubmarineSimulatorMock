@@ -9,10 +9,12 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
 {
     public MessageController messageController;
     private LocalizationManager locale;
+    private GameObject player;
 
     public void Start()
     {
         this.locale = LocalizationManager.Instance;
+        this.player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void OnPointerClick(PointerEventData pointerData)
@@ -51,7 +53,10 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
 
     private List<FoundShipInfo> observation()
     {
-        // TODO: 潜航中は呼べない
+        if (this.player.GetComponent<UBoatController>().DepthState() != SURFACE_STATUS.SURFACE)
+        {
+            throw new Exception("潜航中に観測を行った");
+        }
 
         var ships = new List<GameObject>();
         var cargoShips = GameObject.FindGameObjectsWithTag("CargoShip").ToList();
@@ -59,16 +64,13 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         ships = cargoShips;
         ships.AddRange(destroyers);
 
-        var player = GameObject.FindGameObjectWithTag("Player");
-        // Debug.Log("自分の位置: " + player.transform.position);
-
         var foundShips = new List<GameObject>();
 
         // 目視可能範囲は半径7マイル(12.964KM)
         var searchRange = 12.964 * 1000;
         foreach (GameObject ship in ships)
         {
-            float distance = Vector3.Distance(player.transform.position, ship.transform.position);
+            float distance = Vector3.Distance(this.player.transform.position, ship.transform.position);
             if (distance < searchRange)
             {
                 // Debug.Log(distance);
@@ -80,10 +82,10 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         foreach (var foundShip in foundShips)
         {
             var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
-            var direction = this.calcDirection(player, foundShip);
+            var direction = this.calcDirection(this.player, foundShip);
             var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
             var speed = Mathf.RoundToInt(foundShip.GetComponent<Rigidbody>().velocity.magnitude);
-            var distance = Mathf.RoundToInt(Vector3.Distance(player.transform.position, foundShip.transform.position));
+            var distance = Mathf.RoundToInt(Vector3.Distance(this.player.transform.position, foundShip.transform.position));
 
             var shipInfo = new FoundShipInfo(shipType, direction, cource, speed, distance);
             shipInfos.Add(shipInfo);
