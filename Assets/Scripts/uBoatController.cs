@@ -10,16 +10,6 @@ public class UBoatController : ShipControllerBase
     public CompassBackController CompassBackController;
     public GameObject TorpedoPrefab;
 
-    void Start()
-    {
-        base.Start();
-    }
-
-    void Update()
-    {
-        base.Update();
-    }
-
     protected override void UpdateDirection()
     {
         this.CompassBackController.SetRotate(this._course);
