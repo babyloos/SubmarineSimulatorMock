@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraManager : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class CameraManager : MonoBehaviour
 
   void Update()
   {
+    // UIの上にマウスカーソルがある場合はカメラ制御しない
+    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+    {
+      return;
+    }
+
     var scroll = Input.mouseScrollDelta.y;
     mainCamera.transform.position += mainCamera.transform.forward * scroll * zoomSpeed;
 
