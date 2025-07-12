@@ -60,7 +60,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         ships.AddRange(destroyers);
 
         var player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("自分の位置: " + player.transform.position);
+        // Debug.Log("自分の位置: " + player.transform.position);
 
         var foundShips = new List<GameObject>();
 
@@ -71,7 +71,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
             float distance = Vector3.Distance(player.transform.position, ship.transform.position);
             if (distance < searchRange)
             {
-                Debug.Log(distance);
+                // Debug.Log(distance);
                 foundShips.Add(ship);
             }
         }
