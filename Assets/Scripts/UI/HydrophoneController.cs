@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,7 +18,6 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerData)
     {
-        Debug.Log("click hydrophone");
         var foundShips = this.findships();
         var messages = this.createMessage(foundShips);
         messageController.ShowMessage(ROLE.Hydrophone, messages);
@@ -25,11 +25,44 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
 
     private List<FoundShipInfo> findships()
     {
-        // TODO: 実実する
-        return new List<FoundShipInfo>()
+        // TODO: 浮上中は監視できない
+        // ※浮上中はボタン押下できず呼ばれないはず
+
+        var ships = new List<GameObject>();
+        var cargoShips = GameObject.FindGameObjectsWithTag("CargoShip").ToList();
+        var destroyers = GameObject.FindGameObjectsWithTag("Destroyer").ToList();
+        ships = cargoShips;
+        ships.AddRange(destroyers);
+
+        var player = GameObject.FindGameObjectWithTag("Player");
+
+        var foundShips = new List<GameObject>();
+
+        // 聴音可能範囲は半径54マイル(100KM)
+        var searchRange = 12.964 * 1000;
+        foreach (GameObject ship in ships)
         {
-            new FoundShipInfo(SHIP_TYPE.MERCHANT, 100f, 200, 10, 200),
-        };
+            float distance = Vector3.Distance(player.transform.position, ship.transform.position);
+            if (distance < searchRange)
+            {
+                foundShips.Add(ship);
+            }
+        }
+
+        var shipInfos = new List<FoundShipInfo>();
+        foreach (var foundShip in foundShips)
+        {
+            var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
+            var direction = this.calcDirection(player, foundShip);
+            var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
+            var speed = Mathf.RoundToInt(foundShip.GetComponent<Rigidbody>().velocity.magnitude);
+            var distance = Mathf.RoundToInt(Vector3.Distance(player.transform.position, foundShip.transform.position));
+
+            var shipInfo = new FoundShipInfo(shipType, direction, cource, speed, distance);
+            shipInfos.Add(shipInfo);
+        }
+
+        return shipInfos;
     }
 
     private List<String> createMessage(List<FoundShipInfo> foundShipInfos)
@@ -41,7 +74,7 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            messages.Add(this.locale.GetLocalizedText("RES_ObserverDiscover").Replace("xxx", foundShipInfos.Count.ToString()));
+            messages.Add(this.locale.GetLocalizedText("RES_HydrophoneDiscover").Replace("xxx", foundShipInfos.Count.ToString()));
             var count = 0;
             foreach (var info in foundShipInfos)
             {
@@ -49,17 +82,46 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
                 var shipName = this.locale.GetLocalizedText("RES_EnemyNum").Replace("xxx", count.ToString());
                 var shipMessaage = shipName + " " +
                                    this.locale.GetLocalizedText("RES_Direction") + info.Direction + ", " +
-                                   this.locale.GetLocalizedText("RES_Range") + info.Range + "m, " +
-                                   this.locale.GetLocalizedText("RES_Course") + info.Course + ", " +
-                                   this.locale.GetLocalizedText("RES_ShipSpeed") + info.Speed + "Kn!";
+                                   this.locale.GetLocalizedText("RES_LargeSounds");
                 messages.Add(shipMessaage);
             }
         }
 
         return messages;
     }
+
+    // TODO: 共通化する
+    // 自分から見た絶対方位を360度で返す
+    private float calcDirection(GameObject mine, GameObject target)
+    {
+        var toTarget = target.transform.position - mine.transform.position;
+        var direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
+        if (direction < 0) direction += 360;
+        return direction;
+    }
+
+    private SOUND_LOUDNESS SoundLoudness(int range)
+    {
+        if (range >= 50000)
+        {
+            return SOUND_LOUDNESS.LARGE;
+        }
+        else if (range >= 30000)
+        {
+            return SOUND_LOUDNESS.SOMEWHAT_LARGE;
+        }
+        else if (range >= 20000)
+        {
+            return SOUND_LOUDNESS.MIDDLE;
+        }
+        else
+        {
+            return SOUND_LOUDNESS.LOW;
+        }
+    }
 }
 
+// TODO: 共通化する
 internal class FoundShipInfo
 {
     public FoundShipInfo(SHIP_TYPE shipType, float direction, float course, int speed, int range)
