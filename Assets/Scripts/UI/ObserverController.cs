@@ -22,7 +22,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         messageController.ShowMessage(ROLE.Observer, messages);
     }
 
-    private List<String> createMessage(List<ObservationShipInfo> observationShipInfos)
+    private List<String> createMessage(List<FoundShipInfo> observationShipInfos)
     {
         var messages = new List<String>();
         if (observationShipInfos.Count == 0)
@@ -49,7 +49,7 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         return messages;
     }
 
-    private List<ObservationShipInfo> observation()
+    private List<FoundShipInfo> observation()
     {
         // TODO: 潜航中は呼べない
 
@@ -76,15 +76,16 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        var shipInfos = new List<ObservationShipInfo>();
-        foreach (var foundShip in foundShips) {
+        var shipInfos = new List<FoundShipInfo>();
+        foreach (var foundShip in foundShips)
+        {
             var shipType = foundShip.tag == "CargoShip" ? SHIP_TYPE.MERCHANT : SHIP_TYPE.DESTROYER;
             var direction = this.calcDirection(player, foundShip);
             var cource = Mathf.RoundToInt(foundShip.transform.eulerAngles.y);
             var speed = Mathf.RoundToInt(foundShip.GetComponent<Rigidbody>().velocity.magnitude);
             var distance = Mathf.RoundToInt(Vector3.Distance(player.transform.position, foundShip.transform.position));
 
-            var shipInfo = new ObservationShipInfo(shipType, direction, cource, speed, distance);
+            var shipInfo = new FoundShipInfo(shipType, direction, cource, speed, distance);
             shipInfos.Add(shipInfo);
         }
 
@@ -99,23 +100,5 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         var direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
         if (direction < 0) direction += 360;
         return direction;
-    }
-
-    internal class ObservationShipInfo
-    {
-        public ObservationShipInfo(SHIP_TYPE shipType, float direction, float course, int speed, int range)
-        {
-            this.ShipType = shipType;
-            this.Direction = direction;
-            this.Course = course;
-            this.Speed = speed;
-            this.Range = range;
-        }
-
-        internal SHIP_TYPE ShipType { get; set; }
-        internal float Direction { get; set; }
-        internal float Course { get; set; }
-        internal int Speed { get; set; }
-        internal int Range { get; set; }
     }
 }
