@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Localization.Platform.Android;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,11 +10,13 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
 {
     public MessageController messageController;
     private LocalizationManager locale;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         this.locale = LocalizationManager.Instance;
+        this.player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void OnPointerClick(PointerEventData pointerData)
@@ -27,14 +30,16 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
     {
         // TODO: 浮上中は監視できない
         // ※浮上中はボタン押下できず呼ばれないはず
+        if (player.GetComponent<UBoatController>().DepthState() == SURFACE_STATUS.SURFACE)
+        {
+            throw new Exception("浮上中に聴音を行った");
+        }
 
         var ships = new List<GameObject>();
         var cargoShips = GameObject.FindGameObjectsWithTag("CargoShip").ToList();
         var destroyers = GameObject.FindGameObjectsWithTag("Destroyer").ToList();
         ships = cargoShips;
         ships.AddRange(destroyers);
-
-        var player = GameObject.FindGameObjectWithTag("Player");
 
         var foundShips = new List<GameObject>();
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Common;
+using UnityEngine.Rendering;
 
 public class UBoatController : ShipControllerBase
 {
@@ -74,5 +75,17 @@ public class UBoatController : ShipControllerBase
     {
         var position = (this._transform.position + new Vector3(0, 0, 0)) + this._transform.forward * -38f;
         Instantiate(this.TorpedoPrefab, position, Quaternion.Euler(this._transform.eulerAngles));
+    }
+
+    public SURFACE_STATUS DepthState()
+    {
+        var uboatDepth = this._transform.position.y;
+        if (uboatDepth >= -5) {
+            return SURFACE_STATUS.SURFACE;
+        } else if (uboatDepth >= -14) {
+            return SURFACE_STATUS.PERISCOPE;
+        } else {
+            return SURFACE_STATUS.SUBMERGED;
+        }
     }
 }
