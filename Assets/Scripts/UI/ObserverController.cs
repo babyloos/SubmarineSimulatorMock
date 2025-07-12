@@ -4,8 +4,9 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ObserverController : MonoBehaviour, IPointerClickHandler
+public class ObserverController : MonoBehaviour
 {
     public MessageController messageController;
     private LocalizationManager locale;
@@ -17,7 +18,21 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         this.player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void OnPointerClick(PointerEventData pointerData)
+    public void Update()
+    {
+        var button = this.gameObject.GetComponent<Button>();
+        if (button.interactable && !this.CanButtonClick())
+        {
+            button.interactable = false;
+        }
+
+        if (!button.interactable && this.CanButtonClick())
+        {
+            button.interactable = true;
+        }
+    }
+
+    public void OnClick()
     {
         var observationShipInfos = this.observation();
         var messages = this.createMessage(observationShipInfos);
@@ -102,5 +117,10 @@ public class ObserverController : MonoBehaviour, IPointerClickHandler
         var direction = Mathf.RoundToInt(Mathf.Atan2(toTarget.x, toTarget.z) * Mathf.Rad2Deg) + 180;
         if (direction < 0) direction += 360;
         return direction;
+    }
+
+    // TODO: Interfaceにする
+    private bool CanButtonClick() {
+        return this.player.GetComponent<UBoatController>().DepthState() == SURFACE_STATUS.SURFACE;
     }
 }
