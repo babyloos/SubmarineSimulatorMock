@@ -18,6 +18,7 @@ public class ObserverController : MonoBehaviour
         this.player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    // TODO: 親クラスへ移譲する
     public void Update()
     {
         var button = this.gameObject.GetComponent<Button>();
@@ -30,6 +31,12 @@ public class ObserverController : MonoBehaviour
         {
             button.interactable = true;
         }
+    }
+
+    // TODO: Interfaceにする
+    private bool CanButtonClick()
+    {
+        return this.player.GetComponent<UBoatController>().DepthState() == SURFACE_STATUS.SURFACE;
     }
 
     public void OnClick()
@@ -119,8 +126,5 @@ public class ObserverController : MonoBehaviour
         return direction;
     }
 
-    // TODO: Interfaceにする
-    private bool CanButtonClick() {
-        return this.player.GetComponent<UBoatController>().DepthState() == SURFACE_STATUS.SURFACE;
-    }
+
 }

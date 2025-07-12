@@ -5,8 +5,9 @@ using System.Linq;
 using UnityEditor.Localization.Platform.Android;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class hydrophoneController : MonoBehaviour, IPointerClickHandler
+public class hydrophoneController : MonoBehaviour
 {
     public MessageController messageController;
     private LocalizationManager locale;
@@ -19,13 +20,31 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
         this.player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void OnPointerClick(PointerEventData pointerData)
+    void Update()
+    {
+        var button = this.gameObject.GetComponent<Button>();
+        if (button.interactable && !this.CanButtonClick())
+        {
+            button.interactable = false;
+        }
+
+        if (!button.interactable && this.CanButtonClick())
+        {
+            button.interactable = true;
+        }
+    }
+
+    private bool CanButtonClick()
+    {
+        return player.GetComponent<UBoatController>().DepthState() != SURFACE_STATUS.SURFACE;
+    }
+
+    public void OnClick()
     {
         var foundShips = this.findships();
         var messages = this.createMessage(foundShips);
         messageController.ShowMessage(ROLE.Hydrophone, messages);
     }
-
     private List<FoundShipInfo> findships()
     {
         // ※浮上中はボタン押下できず呼ばれないはず
