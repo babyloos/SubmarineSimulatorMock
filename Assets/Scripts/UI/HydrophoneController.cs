@@ -39,7 +39,7 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
         var foundShips = new List<GameObject>();
 
         // 聴音可能範囲は半径54マイル(100KM)
-        var searchRange = 12.964 * 1000;
+        var searchRange = 100 * 1000;
         foreach (GameObject ship in ships)
         {
             float distance = Vector3.Distance(player.transform.position, ship.transform.position);
@@ -80,9 +80,10 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
             {
                 count += 1;
                 var shipName = this.locale.GetLocalizedText("RES_EnemyNum").Replace("xxx", count.ToString());
+                var loudMessage = this.locale.GetLocalizedText(this.SoundLoudness(info.Range).GetStringValue());
                 var shipMessaage = shipName + " " +
                                    this.locale.GetLocalizedText("RES_Direction") + info.Direction + ", " +
-                                   this.locale.GetLocalizedText("RES_LargeSounds");
+                                   loudMessage;
                 messages.Add(shipMessaage);
             }
         }
@@ -104,19 +105,19 @@ public class hydrophoneController : MonoBehaviour, IPointerClickHandler
     {
         if (range >= 50000)
         {
-            return SOUND_LOUDNESS.LARGE;
+            return SOUND_LOUDNESS.LOW;
         }
         else if (range >= 30000)
         {
-            return SOUND_LOUDNESS.SOMEWHAT_LARGE;
+            return SOUND_LOUDNESS.MIDDLE;
         }
         else if (range >= 20000)
         {
-            return SOUND_LOUDNESS.MIDDLE;
+            return SOUND_LOUDNESS.SOMEWHAT_LARGE;
         }
         else
         {
-            return SOUND_LOUDNESS.LOW;
+            return SOUND_LOUDNESS.LARGE;
         }
     }
 }
