@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Common;
-using Crest;
 
 public class ShipControllerBase : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class ShipControllerBase : MonoBehaviour
     private Vector4 _velocity;
 
     protected Transform _transform;
-    protected BoatProbes _boatProbes;
+    // protected BoatProbes _boatProbes;
     protected float _distTurnPower = 0f;
     protected float _rotateSpeed = 2.0f;
 
@@ -34,7 +33,7 @@ public class ShipControllerBase : MonoBehaviour
     {
         this._rigidbody = GetComponent<Rigidbody>();
         this._transform = GetComponent<Transform>();
-        this._boatProbes = GetComponent<BoatProbes>();
+        // this._boatProbes = GetComponent<BoatProbes>();
     }
 
     protected void Update()
@@ -54,36 +53,36 @@ public class ShipControllerBase : MonoBehaviour
 
     public void ChangeEngineOut(EngineOut engineOut)
     {
-        if (this._boatProbes == null) {
-            return;
-        }
+    //     if (this._boatProbes == null) {
+    //         return;
+    //     }
 
-        switch (engineOut)
-        {
-            case EngineOut.AheadFull:
-                this._boatProbes._engineBias = -1.5f;
-                break;
-            case EngineOut.AheadHalf:
-                this._boatProbes._engineBias = -0.75f;
-                break;
-            case EngineOut.AheadSlow:
-                this._boatProbes._engineBias = -0.375f;
-                break;
-            case EngineOut.AllStop:
-                this._boatProbes._engineBias = 0f;
-                break;
-            case EngineOut.AsternSlow:
-                this._boatProbes._engineBias = 0.2f;
-                break;
-            case EngineOut.AsternHalf:
-                this._boatProbes._engineBias = 0.4f;
-                break;
-            case EngineOut.AsternFull:
-                this._boatProbes._engineBias = 1f;
-                break;
-            default:
-                break;
-        }
+    //     switch (engineOut)
+    //     {
+    //         case EngineOut.AheadFull:
+    //             this._boatProbes._engineBias = -1.5f;
+    //             break;
+    //         case EngineOut.AheadHalf:
+    //             this._boatProbes._engineBias = -0.75f;
+    //             break;
+    //         case EngineOut.AheadSlow:
+    //             this._boatProbes._engineBias = -0.375f;
+    //             break;
+    //         case EngineOut.AllStop:
+    //             this._boatProbes._engineBias = 0f;
+    //             break;
+    //         case EngineOut.AsternSlow:
+    //             this._boatProbes._engineBias = 0.2f;
+    //             break;
+    //         case EngineOut.AsternHalf:
+    //             this._boatProbes._engineBias = 0.4f;
+    //             break;
+    //         case EngineOut.AsternFull:
+    //             this._boatProbes._engineBias = 1f;
+    //             break;
+    //         default:
+    //             break;
+    //     }
     }
 
     public void ChangeCourse(float diff)

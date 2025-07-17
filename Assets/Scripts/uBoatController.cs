@@ -14,10 +14,10 @@ public class UBoatController : ShipControllerBase
     {
         this.CompassBackController.SetRotate(this._course);
 
-        if (this._boatProbes == null)
-        {
-            return;
-        }
+        // if (this._boatProbes == null)
+        // {
+        //     return;
+        // }
 
         this._course = this._transform.eulerAngles.y;
         var rotateDiff = this._distCourse - this._course;
@@ -39,10 +39,10 @@ public class UBoatController : ShipControllerBase
 
         // Debug.Log("distTurnPower: " + this._distTurnPower);
 
-        if (this._boatProbes._turnPower == this._distTurnPower)
-        {
-            return;
-        }
+        // if (this._boatProbes._turnPower == this._distTurnPower)
+        // {
+        //     return;
+        // }
 
         // 現在の速度を取得
         Vector3 currentVelocity = this._rigidbody.velocity;
@@ -57,8 +57,8 @@ public class UBoatController : ShipControllerBase
         // Debug.Log("速さ (スカラー値): " + kt + " kt/h");
 
         var changeRotateSpeedByAFrame = kt * this._rotateSpeed * Time.deltaTime;
-        this._boatProbes._turnPower = this._boatProbes._turnPower < this._distTurnPower ?
-                                     this._boatProbes._turnPower + changeRotateSpeedByAFrame : this._boatProbes._turnPower - changeRotateSpeedByAFrame;
+        // this._boatProbes._turnPower = this._boatProbes._turnPower < this._distTurnPower ?
+        //                              this._boatProbes._turnPower + changeRotateSpeedByAFrame : this._boatProbes._turnPower - changeRotateSpeedByAFrame;
     }
 
     public void FireTorpedo()
